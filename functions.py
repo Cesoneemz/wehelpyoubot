@@ -35,7 +35,7 @@ def like_on_message(cursor, author):
 
 @connect
 def report_to_message(cursor, author, text):
-    cursor.execute("INSERT OR IGNORE INTO reports (author, message) VALUES (%s, %s)", (author, text))
+    cursor.execute("INSERT INTO reports (author, message) VALUES (%s, %s)", (author, text))
 
 
 @connect
