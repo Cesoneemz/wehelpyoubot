@@ -27,7 +27,7 @@ from admin import delete_message_from_admin as delete_message_from_admin
 from admin import add_admin_to_admins_list as add_admin
 from admin import delete_admin_from_admins_list as delete_admin
 
-TOKEN = os.environ.get('TOKEN')
+TOKEN = os.environ['TOKEN']
 
 bot = telebot.TeleBot(TOKEN)
 
