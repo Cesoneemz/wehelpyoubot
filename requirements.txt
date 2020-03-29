@@ -1,0 +1,12 @@
+certifi==2019.11.28
+chardet==3.0.4
+idna==2.9
+PySocks==1.7.1
+pyTelegramBotAPI==3.6.7
+requests==2.10.0
+six==1.14.0
+urllib3==1.25.8
+postgres==3.0.0
+psycopg2-binary==2.8.4
+psycopg2-pool==1.1
+
