@@ -117,8 +117,14 @@ def process_my_message(message):
 
 
 def edit_message(message):
-    edit(message)
-    bot.send_message(message.chat.id, "Успешно отредактировано!", reply_markup=markups.markup)
+    bad_words = check_bad_words(message.text.lower())
+    if bad_words == '':
+        edit(message)
+        bot.send_message(message.chat.id, "Успешно отредактировано!", reply_markup=markups.markup)
+    else:
+        bot.send_message(message.chat.id, f"Ваше сообщение содержит недопустимые слово(-а) ({bad_words}) и не было "
+                                          f"изменено.")
+        go_back(message)
 
 
 def delete_message(message):
