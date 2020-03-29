@@ -40,7 +40,7 @@ def report_to_message(cursor, author, message):
 
 @connect
 def get_help_message(cursor):
-    cursor.execute("SELECT message, author FROM messages WHERE isBanned == 0 ORDER BY random() LIMIT 2")
+    cursor.execute("SELECT message, author FROM messages WHERE isBanned == 0 ORDER BY random() LIMIT 1")
     (help_text, author) = cursor.fetchone()
     return help_text, author
 
