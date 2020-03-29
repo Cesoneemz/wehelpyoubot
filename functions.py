@@ -14,7 +14,7 @@ def check_bad_words(message):
 @connect
 def check_is_banned(cursor, member_id):
     try:
-        result = cursor.execute("SELECT isBanned FROM messages WHERE author = ?", (member_id,))
+        result = cursor.execute("SELECT isBanned FROM messages WHERE author = %s", (member_id,))
         (result,) = cursor.fetchone()
     except:
         result = 0
@@ -30,7 +30,7 @@ def check_is_message_exists(cursor, member_id):
 
 @connect
 def like_on_message(cursor, author):
-    cursor.execute("UPDATE messages SET likes = likes + 1 WHERE author = ?", (author,))
+    cursor.execute("UPDATE messages SET likes = likes + 1 WHERE author = %s", (author,))
 
 
 @connect
