@@ -92,6 +92,7 @@ def process_create_new_message(message):
     else:
         bot.send_message(message.chat.id, f"Ваше сообщение содержит недопустимые слово(-а) ({bad_words}) и не было "
                                           f"добавлено.")
+        go_back(message)
 
 
 @bot.message_handler(commands=['message'])
