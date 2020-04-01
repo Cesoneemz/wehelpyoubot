@@ -5,14 +5,11 @@ admins_list = ['cesoneemz']
 
 @connect
 def show_all_reports(cursor):
-    reports = {}
     msg = "***\n\n"
     result = cursor.execute("SELECT * FROM reports")
     result = cursor.fetchall()
     for author, message in result:
-        reports[author] = message
-    for username, message in reports.items():
-        msg += f"Автор сообщения: {username}\n\nСообщение: {message}\n\n***\n\n"
+        msg += f"Автор сообщения: {author}\n\nСообщение: {message}\n\n***\n\n"
     return msg
 
 
