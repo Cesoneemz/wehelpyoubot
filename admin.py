@@ -1,6 +1,6 @@
 from db import connect as connect
 
-admins_list = ['cesoneemz']
+admins_list = ['Cesoneemz']
 
 
 @connect
